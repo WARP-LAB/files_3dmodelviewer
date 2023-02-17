@@ -91,10 +91,11 @@ Currently this app taps *directly* in `nextcloud/viewer` modal, as it was less c
 No test files in repo.
 This loader has been tested by exports provided by various types Blender, Fusion 360, Solidworks, ArchiCAD. There are issues that needs to be addressed in *engine*.
 
-Additionally browse through these files:
+Additionally browse through these reference files:
 
-- [KhronosGroup/glTF-Sample-Models](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0) glTF up to spec
-- [google/draco](https://github.com/google/draco/tree/master/testdata) glTF up to spec
+- [KhronosGroup/glTF-Sample-Models](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0) GLTF/GLB up to spec
+- [google/draco](https://github.com/google/draco/tree/master/testdata) GLTF/GLB up to spec
+- [FreeCAD/Examples](https://github.com/FreeCAD/Examples) FCSTD up to spec
 - [Sketchfab/glTF](https://sketchfab.com/features/gltf)
 - [Voron](https://github.com/VoronDesign)
 - [kovacsv/Online3DViewer](https://github.com/kovacsv/Online3DViewer/tree/master/test/testfiles)
