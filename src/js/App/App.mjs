@@ -25,14 +25,14 @@ import {
   FACTORY_GUI_VALID_ENV,
   FACTORY_GUI_PARAMS,
   ENV_SUFFIXES_ORDER,
-} from '../configuration/config.mjs';
+} from 'configuration/config.mjs'; // eslint-disable-line import/no-unresolved, n/no-missing-import
 
 import {
   fetchFileFromUrl,
   objectsHaveSameKeysDeep,
   addInlineStyle,
   clampf,
-} from '../helpers/warp-helpers.mjs';
+} from 'helpers/warp-helpers.mjs'; // eslint-disable-line import/no-unresolved, n/no-missing-import
 
 import * as OV from 'online-3d-viewer';
 import {Pane} from 'tweakpane';
@@ -153,10 +153,6 @@ export default {
       this.guiParams = {...FACTORY_GUI_PARAMS};
       try {
         const savedParams = JSON.parse(localStorage.getItem(STORAGE_KEY));
-        console.log(
-          FACTORY_GUI_PARAMS,
-          savedParams,
-        );
         if (!objectsHaveSameKeysDeep(FACTORY_GUI_PARAMS, savedParams)) {
           throw new Error('Schema does not match, probably some update, will not migrate, just reset.');
         }
@@ -216,7 +212,7 @@ export default {
       const modelFetchUrl = this.source || this.davPath;
       const modelBasenameFs = this.basename;
       const modelBasenameEnc = encodeURIComponent(modelBasenameFs);
-      const modelExt = this.basename.split('.').pop(); // eslint-disable-line no-unused-vars
+      const modelExt = this.basename.split('.').pop();
       const modelMime = this.mime;
 
       logger.debug('modelFetchUrl', modelFetchUrl);
@@ -339,10 +335,7 @@ export default {
             }),
           );
           texFilesLoaded = texFilesToPassRes.filter((o) => o.status === 'fulfilled').map((s) => s.value);
-          console.log('texFilesToPassRes', texFilesToPassRes); // eslint-disable-line
-          console.log('texFilesLoaded', texFilesLoaded); // eslint-disable-line
           filesToPass = [...filesToPass, ...texFilesLoaded];
-          console.log('filesToPass', filesToPass); // eslint-disable-line
         }
         catch (error) {
           logger.error('error loading obj textures', error?.name, error);
@@ -589,13 +582,9 @@ export default {
 
       if (__TIER_DEVELOPMENT__) {
         this.guiPane.on('change', (ev) => {
-          console.log(`changed: ${JSON.stringify(ev.presetKey)} ${JSON.stringify(ev.value)} ${JSON.stringify(ev.last)}`);
+          logger.debug(`changed: ${JSON.stringify(ev.presetKey)} ${JSON.stringify(ev.value)} ${JSON.stringify(ev.last)}`);
         });
       }
-
-      const preset = this.guiPane.exportPreset();
-      console.log('PANE PRESET');
-      console.log(preset);
     },
   },
 };
