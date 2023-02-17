@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg1682"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title1805">3D Model Viewer</title>
+  <defs
+     id="defs1679" />
+  <g
+     id="layer1">
+    <rect
+       style="fill:none;fill-opacity:0.00682594;stroke:none;stroke-width:3.35425"
+       id="rect2330"
+       width="32"
+       height="32"
+       x="0"
+       y="0" />
+    <circle
+       id="use216"
+       cx="-14.39055824279785"
+       cy="14.39055919647217"
+       fill-opacity="1"
+       fill="#000000"
+       stroke="none"
+       style="stroke-width:0.0643777;stroke-linecap:round;stroke-linejoin:round"
+       transform="scale(-1,1)"
+       r="0.5150215029716492" />
+    <path
+       class="hamiltonian"
+       d="M 4.733904954509942,24.04721123606892 14.39055763122417,14.39055855935469 V 1.515021657069051"
+       id="path218"
+       style="fill:none;fill-opacity:0.8;stroke:#000000;stroke-width:0.386266;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <use
+       class="back"
+       xlink:href="#cube"
+       transform="rotate(180,15.99999974400988,16.00000067214039)"
+       id="use220"
+       x="0"
+       y="0"
+       style="display:inline;fill:none;fill-opacity:0;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" />
+    <g
+       id="cube"
+       transform="matrix(-0.0643776845114282,0,0,0.0643776845114282,17.60944185679558,17.6094427849261)"
+       style="display:inline;fill:none;fill-opacity:0.8;stroke:#000000;stroke-linecap:round;stroke-linejoin:round">
+      <path
+         d="M 0,0 200,-100 50,-250 -150,-150 Z"
+         fill="#eeeeee"
+         id="path222" />
+      <path
+         d="M 0,0 200,-100 V 100 L 0,200 Z"
+         fill="#dddddd"
+         id="path224" />
+      <path
+         d="M 0,0 -150,-150 V 50 L 0,200 Z"
+         fill="#bbbbbb"
+         id="path226" />
+    </g>
+    <circle
+       id="use229"
+       cx="-17.60944175720215"
+       cy="17.60944366455078"
+       fill-opacity="1"
+       fill="#000000"
+       stroke="none"
+       style="stroke-width:0.0643777;stroke-linecap:round;stroke-linejoin:round"
+       transform="scale(-1,1)"
+       r="0.5150215029716492" />
+    <circle
+       id="use231"
+       cx="-4.73390531539917"
+       cy="11.17167472839355"
+       fill-opacity="1"
+       fill="#000000"
+       stroke="none"
+       style="stroke-width:0.0643777;stroke-linecap:round;stroke-linejoin:round"
+       transform="scale(-1,1)"
+       r="0.5150215029716492" />
+    <circle
+       id="use233"
+       cx="-14.39055824279785"
+       cy="1.515021443367004"
+       fill-opacity="1"
+       fill="#000000"
+       stroke="none"
+       style="stroke-width:0.0643777;stroke-linecap:round;stroke-linejoin:round"
+       transform="scale(-1,1)"
+       r="0.5150215029716492" />
+    <circle
+       id="use235"
+       cx="-27.26609420776367"
+       cy="7.9527907371521"
+       fill-opacity="1"
+       fill="#000000"
+       stroke="none"
+       style="stroke-width:0.0643777;stroke-linecap:round;stroke-linejoin:round"
+       transform="scale(-1,1)"
+       r="0.5150215029716492" />
+    <circle
+       id="use237"
+       cx="-17.60944175720215"
+       cy="30.48497772216797"
+       fill-opacity="1"
+       fill="#000000"
+       stroke="none"
+       style="stroke-width:0.0643777;stroke-linecap:round;stroke-linejoin:round"
+       transform="scale(-1,1)"
+       r="0.5150215029716492" />
+    <circle
+       id="use239"
+       cx="-4.73390531539917"
+       cy="24.04721260070801"
+       fill-opacity="1"
+       fill="#000000"
+       stroke="none"
+       style="stroke-width:0.0643777;stroke-linecap:round;stroke-linejoin:round"
+       transform="scale(-1,1)"
+       r="0.5150215029716492" />
+    <circle
+       id="use241"
+       cx="-27.26609420776367"
+       cy="20.82832717895508"
+       fill-opacity="1"
+       fill="#000000"
+       stroke="none"
+       style="stroke-width:0.0643777;stroke-linecap:round;stroke-linejoin:round"
+       transform="scale(-1,1)"
+       r="0.5150215029716492" />
+    <path
+       class="hamiltonian"
+       d="M 4.733904954509942,24.04721123606892 V 11.17167433378328 L 17.60944185679558,17.6094427849261 v 12.87553690228561 l 9.65665267671423,-9.65665267671418 V 7.952790108211893 L 14.39055763122417,1.515021657069091"
+       id="path243"
+       style="display:inline;fill:none;fill-opacity:0.8;stroke:#000000;stroke-width:0.386266;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  </g>
+  <metadata
+     id="metadata1803">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>3D Model Viewer</dc:title>
+        <dc:description>Modified https://commons.wikimedia.org/wiki/User:Cmglee</dc:description>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>WARP</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>CC BY-SA 4.0</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:source>https://en.wikipedia.org/wiki/Platonic_solid#/media/File:Hamiltonian_platonic_graphs.svg</dc:source>
+        <cc:license
+           rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

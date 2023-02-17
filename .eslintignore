@@ -1,0 +1,26 @@
+# OOB: node_modules/**, bower_components/**
+node_modules/**
+js/**
+build/**
+src/libs/**
+src/**/*.vue
+
+# do not ignore dot config JS files
+!.babelrc.js
+!.babelrc.cjs
+!.babelrc.mjs
+!.eslintrc.js
+!.eslintrc.cjs
+!.eslintrc.mjs
+!.ncurc.js
+!.ncurc.cjs
+!.ncurc.mjs
+!.postcssrc.js
+!.postcssrc.cjs
+!.postcssrc.mjs
+!.stylelintrc.js
+!.stylelintrc.cjs
+!.stylelintrc.mjs
+!.webpack.*.js
+!.webpack.*.cjs
+!.webpack.*.mjs

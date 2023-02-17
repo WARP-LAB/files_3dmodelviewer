@@ -1,0 +1,16 @@
+{
+    "name": "warp-lab/files_3dmodelviewer",
+    "description": "Visualise and explore 3D models in Nextcloud",
+    "type": "project",
+    "license": "AGPL",
+    "authors": [
+      {
+        "name": "WARP",
+        "email": "development@warp.lv",
+        "homepage": "https://www.warp.lv/",
+        "role": "Developer"
+      }
+    ],
+    "require": {},
+    "require-dev": {}
+}

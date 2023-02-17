@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>files_3dmodelviewer</id>
+
+    <name>3D Model Viewer</name>
+
+    <summary>Visualize and explore 3D models</summary>
+
+    <description><![CDATA[# Visualise and explore 3D models
+
+- 3dm | Rhino
+- 3ds | Autodesk 3D Studio
+- 3mf | 3D Manufacturing Format
+- bim | dotbim
+- brep/brp | Boundary Representation
+- dae | Collada
+- fbx | Filmbox
+- fcstd | FreeCAD Standard File Format
+- glb | GL Transmission Format
+- gltf | GL Transmission Format
+- ifc | International Foundation Class
+- iges/igs | Initial Graphics Exchange Specification
+- obj | Wavefront
+- off | Object File Format
+- ply | Polygon File Format
+- step/stp | Standard for Exchange of Product Model Data
+- stl | Stereolithography Standard Tesselation/Triangle Language
+- wrl | Virtual Reality Modeling Language
+
+]]></description>
+
+    <version>0.0.1</version>
+    <licence>agpl</licence>
+    <author homepage="https://www.warp.lv">WARP</author>
+    <namespace>Files3dModelViewer</namespace>
+
+    <category>files</category>
+    <category>multimedia</category>
+
+    <documentation>
+      <user>https://github.com/WARP-LAB/files_3dmodelviewer</user>
+      <admin>https://github.com/WARP-LAB/files_3dmodelviewer</admin>
+      <developer>https://github.com/WARP-LAB/files_3dmodelviewer</developer>
+    </documentation>
+
+    <website>https://github.com/WARP-LAB/files_3dmodelviewer</website>
+    <bugs>https://github.com/WARP-LAB/files_3dmodelviewer/issues</bugs>
+    <repository type="git">https://github.com/WARP-LAB/files_3dmodelviewer</repository>
+
+    <dependencies>
+        <nextcloud min-version="24" max-version="25"/>
+    </dependencies>
+
+    <repair-steps>
+        <install>
+            <step>OCA\Files3dModelViewer\Migration\MimeTypeInstall</step>
+        </install>
+        <uninstall>
+            <step>OCA\Files3dModelViewer\Migration\MimeTypeUninstall</step>
+        </uninstall>
+    </repair-steps>
+</info>

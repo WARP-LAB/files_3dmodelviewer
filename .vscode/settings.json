@@ -1,0 +1,71 @@
+{
+  // disable VSCode built in syntax validation so that ESLint is used
+  "javascript.validate.enable": false,
+  "html.validate.scripts": false,
+  // disable VSCode built in syntax validation so that ESLint typescript-eslint is used
+  "typescript.validate.enable": false,
+  // disable VSCode built in syntax validation so that Stylelint is used
+  "html.validate.styles": false,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  // ----------------
+  // prettier disable
+  "prettier.enable": false,
+  // eslint enable
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+  // clear default formater
+  "editor.defaultFormatter": null, // set default formater to null and enable per language as needed
+  // @builtin javascript
+  // override defaults
+  // "javascript.referencesCodeLens.enabled": true,
+  "javascript.suggest.completeFunctionCalls": true,
+  // set options per language
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.insertSpaces": true, // OVERRIDE per language
+    "editor.trimAutoWhitespace": false, // because of space between function name and parenthesis
+    "files.trimFinalNewlines": false, // on save keep one newline always
+    "files.trimTrailingWhitespace": true, // on save remove trailing whitespaces
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false // because editorconfig has issues picking up
+  },
+  // ----------------
+  // TODO Highlight keywords used in WARP sources
+  // https://github.com/wayou/vscode-todo-highlight
+  "todohighlight.keywords": [
+    "TODO:",
+    "DEPR:",
+    "FIXME:",
+    "DEBUG:",
+    "REVIEW:",
+    "NOTE:",
+    "VENDORISSUE:",
+    "PLATFORMALIGN:",
+    "WORKAROUND:",
+    "TRANSLATION:",
+    "DEPRECIATE:",
+    "SERVERCHANGES:",
+  ],
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/compile": true,
+    "**/*.svg": true,
+    "**/LICENSE*": true,
+    "**/js": true,
+    "**/build": true
+  }
+}

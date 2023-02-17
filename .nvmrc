@@ -1,0 +1,5 @@
+16.19.0
+# lts/*
+
+# Notes:
+# we could keep "lts/*" as this builds on current lts 19.x, but @nextcloud/* packages devs have specified 16, fine

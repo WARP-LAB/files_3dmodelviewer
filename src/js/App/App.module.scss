@@ -1,0 +1,74 @@
+/**
+ * SPDX-FileCopyrightText: WARP <development@warp.lv>
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+@mixin devBorderRandom {
+  @if ($env == "development") {
+    border: 1px solid rgb(random(255), random(255), random(255));
+  }
+}
+
+.containApp {
+  @include devBorderRandom;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.containCanvas {
+  @include devBorderRandom;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  &> div {
+    // background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100px;
+    pointer-events: none;
+
+    &> div {
+      //  background-color: green;
+        width: 64px;
+        height: 64px;
+        align-self: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        animation: spinner 5.0s linear infinite;
+        padding-bottom: 1rem;
+    }
+  }
+
+}
+
+.containFloatGui {
+  @include devBorderRandom;
+
+  position:absolute;
+  top: 1rem;
+  right: 44px; // Nextcloud viewer has left/light arrows for media group
+  z-index: 2;
+
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+

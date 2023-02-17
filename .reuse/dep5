@@ -1,0 +1,12 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Model And Scene Viewer One
+Upstream-Contact: WARP <development@warp.lv>
+Source: https://github.com/nextcloud/profiler
+
+Files: package-lock.json package.json composer.json composer.lock
+Copyright: WARP <development@warp.lv>
+License: AGPL-3.0-or-later
+
+Files: l10n/*.js l10n/*.json
+Copyright: Nextcloud translators <https://www.transifex.com/nextcloud/>
+License: AGPL-3.0-or-later

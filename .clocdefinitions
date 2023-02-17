@@ -1,0 +1,25 @@
+EditorConfig
+    filter remove_matches ^\s*#
+    filter remove_inline #.*$
+    extension editorconfig
+    3rd_gen_scale 1.00
+ESLint ignore
+    filter remove_matches ^\s*#
+    filter remove_inline #.*$
+    extension eslintignore
+    3rd_gen_scale 1.00
+Stylelint ignore
+    filter remove_matches ^\s*#
+    filter remove_inline #.*$
+    extension stylelintignore
+    3rd_gen_scale 1.00
+Browserslist ignore
+    filter remove_matches ^\s*#
+    filter remove_inline #.*$
+    extension browserslistrc
+    3rd_gen_scale 1.00
+Markdownlit ignore
+    filter remove_matches ^\s*#
+    filter remove_inline #.*$
+    extension markdownlintignore
+    3rd_gen_scale 1.00
