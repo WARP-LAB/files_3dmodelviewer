@@ -57,16 +57,16 @@ export const FACTORY_GUI_PARAMS = {
       expanded: true,
     },
     view: {
-      expanded: true,
+      expanded: false,
     },
     camera: {
-      expanded: true,
+      expanded: false,
     },
     environment: {
-      expanded: true,
+      expanded: false,
     },
     model: {
-      expanded: true,
+      expanded: false,
     },
   },
   values: {
