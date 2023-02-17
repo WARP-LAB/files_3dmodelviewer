@@ -125,6 +125,13 @@ Additionally browse through these files:
 - tar
 - curl
 
+### Prefligth
+
+```sh
+nvm use
+npm install
+```
+
 ### Building for prod
 
 ```sh
