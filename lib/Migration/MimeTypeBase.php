@@ -66,7 +66,8 @@ abstract class MimeTypeBase implements IRepairStep
 		foreach ($data as $ext => $mimes) {
 			$obj[$ext] = $mimes;
 		}
-		file_put_contents($filename, json_encode($obj,  JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+		$mask = empty($obj) ? JSON_FORCE_OBJECT|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES : JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES;
+		file_put_contents($filename, json_encode($obj, $mask));
 	}
 
 	protected function removeFromFileMapping(string $filename, array $data) {
@@ -81,7 +82,8 @@ abstract class MimeTypeBase implements IRepairStep
 		foreach ($data as $ext => $mimes) {
 			unset($obj[$ext]);
 		}
-		file_put_contents($filename, json_encode($obj,  JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+		$mask = empty($obj) ? JSON_FORCE_OBJECT|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES : JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES;
+		file_put_contents($filename, json_encode($obj, $mask));
 	}
 
 	protected function appendToFileAliases(string $filename, array $data) {
@@ -98,7 +100,8 @@ abstract class MimeTypeBase implements IRepairStep
 				$obj[$mime] = $ext;
 			}
 		}
-		file_put_contents($filename, json_encode($obj,  JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+		$mask = empty($obj) ? JSON_FORCE_OBJECT|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES : JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES;
+		file_put_contents($filename, json_encode($obj, $mask));
 	}
 
 	protected function removeFromFileAliases(string $filename, array $data) {
@@ -115,6 +118,7 @@ abstract class MimeTypeBase implements IRepairStep
 				unset($obj[$mime]);
 			}
 		}
-		file_put_contents($filename, json_encode($obj,  JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+		$mask = empty($obj) ? JSON_FORCE_OBJECT|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES : JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES;
+		file_put_contents($filename, json_encode($obj, $mask));
 	}
 }
