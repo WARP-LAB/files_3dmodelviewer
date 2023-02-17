@@ -30,7 +30,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 | stl | Stereolithography Standard Tesselation/Triangle Language | ASCII and Binary |
 | wrl | Virtual Reality Modeling Language | superseded by X3D |
 
-As of 0.0.1 the only functionality is basic controls (orbit, pan, zoom), few options for view, camera, environment and model display. See [Development notes](#development-notes).
+Currently the only functionality is basic controls (orbit, pan, zoom), few options for view, camera, environment and model display. See [Development notes](#development-notes).
 
 ## Installation
 
@@ -67,7 +67,7 @@ As of 0.0.1 the only functionality is basic controls (orbit, pan, zoom), few opt
 
 ### Design
 
-Why? Because [v1r0x/files_3d](https://github.com/v1r0x/files_3d) seems to be abandoned and something working that can at least display basic models was needed.
+Why? [v1r0x/files_3d](https://github.com/v1r0x/files_3d) was used before, however it lacked file support that was necessary for inhouse needs. After evaluating *status quo* it made more sense to make a new app and rely on well maintained and active engine under the hood.
 
 Nextcloud docs on app building [exists](https://docs.nextcloud.com/server/latest/developer_manual/app_development/index.html), however one can truly start to understand what & how after diving into Nextcloud source. Ain't got time for that, therefore shortcuts were made by inspecting these great existing apps and how they have tackled it (especially Nextcloud offical and featured apps)
 
