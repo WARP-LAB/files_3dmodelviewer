@@ -1,21 +1,43 @@
 # Changelog
 
-## 0.0.2
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.0.4]
 
 ### Added
 
-- Cleanup.
+- FreeCAD icon (`fcstd` fyle type)
+- Link to FreeCAD file references, that can be used to test the app
 
 ### Fixed
 
+- Camera type loading from saved state
+
+### Removed
+
+- Dependencies that are not used, but were used when mocking the app
+
+## [0.0.3]
+
+### Fixed
+
+- MIME nextcloud JSON for cases where it is empty, especially after app disable
+
 ### Changed
 
-## 0.0.1
+- Readme
+- Default GUI state for first open, where all subpanels are in closed state
+
+## [0.0.2]
+
+### Changed
+
+- Cleanup
+
+## [0.0.1]
 
 ### Added
 
 - Initial push.
-
-### Fixed
-
-### Changed
