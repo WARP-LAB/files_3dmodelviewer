@@ -354,7 +354,7 @@ export default {
         this.domElContainerCanvas,
         filesToPass,
         {
-          // cameraMode: OV.CameraMode.Perspective,
+          cameraMode: this.guiParams.values.camType,
           environmentSettings: new OV.EnvironmentSettings(
             ENV_SUFFIXES_ORDER.map((sfx) => {
               return generateUrl(`apps/files_3dmodelviewer/img/envmaps/${this.guiParams.values.envId}/${sfx}.png`);
