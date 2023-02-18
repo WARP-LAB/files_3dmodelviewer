@@ -1,7 +1,42 @@
-Icons for 3dm, 3ds, 3mf, dae, fbx, glb, gltf, obj, off, ply, wrl
-JunGSa from Noun Project <https://thenounproject.com/JunGSa/>
-Licenced under CCBY3.0
+# Icons for MIME
 
-Icons for bin, brep, fcstd, ifc, iges, mtl, step, stl
-Created by kroko @ WARP <development@warp.lv> based on JunGSa reference
-Retaining CCBY3.0
+## Icons
+
+- 3dm
+- 3ds
+- 3mf
+- dae
+- fbx
+- glb
+- gltf
+- obj
+- off
+- ply
+- wrl
+
+### Author
+
+JunGSa from Noun Project <https://thenounproject.com/JunGSa/>
+
+### Licence
+
+Licensed under CCBY3.0 <https://creativecommons.org/licenses/by/3.0/>
+
+## Icons
+
+- bin
+- brep
+- fcstd
+- ifc
+- iges
+- mtl
+- step
+- stl
+
+### Author
+
+Adopted by WARP based on JunGSa reference
+
+### Licence
+
+Retaining CCBY3.0 <https://creativecommons.org/licenses/by/3.0/>
