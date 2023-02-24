@@ -24,43 +24,32 @@ Steps to reproduce the behavior:
 
 A clear and concise description of what you expected to happen.
 
+## If the bug is about app not displaying some specific file
+
+<!-- Have you tried opening it in a desktop app, what is the result there. E.g., "STL is not previewed, bet when I import it in Blender everything is fine". Please elaborate. -->
+
 ## Screenshots
 
 If applicable, add screenshots to help explain your problem.
 
-## Desktop (please complete the following information)
-
-- OS: [e.g. iOS]
-- Browser [e.g. chrome, safari]
-- Version [e.g. 22]
-
-## Handheld (please complete the following information)
-
-- Device: [e.g. iPhone6]
-- OS: [e.g. iOS8.1]
-- Browser [e.g. stock browser, safari]
-- Version [e.g. 22]
-
 ## Browser log
 
-```sh
+<!-- 
 Open your console, reload your page and/or do the action leading to this issue and copy/paste the log in this thread.
-```
+-->
 
 <details>
 <summary>How to access your browser console (Click to expand)</summary>
 
 ### Chrome
 
-- Press either CTRL + SHIFT + J to open the “console” tab of the Developer Tools.
-- Alternative method:
-    1. Press either CTRL + SHIFT + I or F12 to open the Developer Tools.
-    2. Click the “console” tab.
+1. Press either CTRL + SHIFT + I / CMD + ALT + I or F12 to open the Developer Tools.
+2. Click the “console” tab.
 
 ### Safari
 
-- Press CMD + ALT + I to open the Web Inspector.
-- See Chrome’s step 2. (Chrome and Safari have pretty much identical dev tools.)
+1. Press CMD + ALT + I to open the Web Inspector.
+2. See Chrome’s step 2. (Chrome and Safari have pretty much identical dev tools.)
 
 ### IE
 
@@ -69,18 +58,53 @@ Open your console, reload your page and/or do the action leading to this issue a
 
 ### Firefox
 
-- Press CTRL + SHIFT + K to open the Web console (COMMAND + SHIFT + K on Macs).
-- or, if Firebug is installed (recommended):
+1. Press CTRL + SHIFT + K to open the Web console (COMMAND + SHIFT + K on Macs).
+2. or, if Firebug is installed (recommended):
     1. Press F12 to open Firebug.
     2. Click on the “console” tab.
 
 ### Opera
 
-- Press CTRL + SHIFT + I to open Dragonfly.
-- Click on the “console” tab.
+1. Press CTRL + SHIFT + I to open Dragonfly.
+2. Click on the “console” tab.
 
 </details>
 
+## How the app was installed?
+
+<!-- Leave one of the following -->
+- Via app store.
+- Manually. Downloading `files_3dmodelviewer.tar.gz` from releases and unzipping the directory.
+- Manually. Cloning and building.
+
+<!-- If manually, please specify value of `apps_path` key if it is set in `config/config.php` -->
+
+## Versions
+
+### Nextcloud
+
+<!-- please complete the following information if applicable -->
+
+- Version: <!-- e.g. 25.0.4 -->
+- Webserver: <!--  e.g. Apache, nginx -->
+
+### Desktop
+
+<!-- please complete the following information if applicable -->
+
+- OS: <!-- e.g. macOS, MSW, GNU/Linux -->
+- Browser: <!--  e.g. Chrome, Safari, Firefox, Edge -->
+- Version: <!-- e.g. 22 -->
+
+### Handheld
+
+<!-- please complete the following information if applicable -->
+
+- Device: <!-- e.g. iPhone6 -->
+- OS: <!-- e.g. iOS8.1 -->
+- Browser: <!--  Chrome, Safari -->
+- Version: <!-- e.g. 22 -->
+
 ## Additional context
 
-Add any other context about the problem here.
+Add any other context about the issue.

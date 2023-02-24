@@ -15,6 +15,6 @@ e.g. .blend file
 
 e.g. Blender
 
-## Please attach a sample file here** (or a direct external link to one)
+## Please attach a sample file here (or a direct external link to one)
 
 [sample file](https://www.blender.org/download/demo/bundles/bundles-3.0/asset-demo-bundle-3.0-cube-diorama.zip/)
