@@ -92,19 +92,19 @@ Open your console, reload your page and/or do the action leading to this issue a
 
 <!-- please complete the following information if applicable -->
 
-- OS: <!-- e.g. macOS, MSW, GNU/Linux -->
-- Browser: <!--  e.g. Chrome, Safari, Firefox, Edge -->
-- Version: <!-- e.g. 22 -->
+- OS: <!-- e.g. Ubuntu 22.04.2, macOS 10.15, Windows 11 -->
+- Browser and version: <!--  e.g. Chrome 110.0.5481.77, Safari 16.3, Firefox 110.0, Edge 110 -->
 
 ### Handheld
 
 <!-- please complete the following information if applicable -->
 
-- Device: <!-- e.g. iPhone6 -->
-- OS: <!-- e.g. iOS8.1 -->
-- Browser: <!--  Chrome, Safari -->
-- Version: <!-- e.g. 22 -->
+- Device: <!-- e.g. iPhone 14, Google Pixel 6a -->
+- OS: <!-- e.g. iOS 16.3.1, Android 13 -->
+- Browser and version: <!--  e.g. Chrome 110.0.5481.77, Safari 16.3, Firefox 110.0, Edge 110 -->
 
 ## Additional context
 
 Add any other context about the issue.
+
+<!-- Sometimes apps clash, it might help if you would issue command `php occ app:list` and paste output here, too -->
