@@ -17,10 +17,11 @@ import {
 } from '@nextcloud/event-bus';
 
 import {
-  generateUrl,
+  generateFilePath,
 } from '@nextcloud/router';
 
 import {
+  APP_ID,
   STORAGE_KEY,
   FACTORY_GUI_VALID_ENV,
   FACTORY_GUI_PARAMS,
@@ -204,7 +205,7 @@ export default {
       this.domElContainerLoading = document.createElement('div');
       const domElSpinner = document.createElement('div');
       addInlineStyle(domElSpinner, {
-        backgroundImage: `url('${generateUrl('apps/files_3dmodelviewer/img/app.svg')}')`,
+        backgroundImage: `url('${generateFilePath(APP_ID, '', 'img/app.svg')}')`,
       });
       this.domElContainerLoading.appendChild(domElSpinner);
       this.domElContainerCanvas.appendChild(this.domElContainerLoading);
@@ -347,7 +348,7 @@ export default {
       this.paramsLoad();
 
       // assuming that installed under apps/, not some custom path enabled by "apps_paths" key in config.php
-      OV.SetExternalLibLocation(generateUrl('apps/files_3dmodelviewer/js/libs'));
+      OV.SetExternalLibLocation(generateFilePath(APP_ID, '', 'js/libs'));
       // https://kovacsv.github.io/Online3DViewer/Function_Init3DViewerFromFileList.html
       // retuns EmbeddedViewer
       this.viewerObj = OV.Init3DViewerFromFileList(
@@ -357,7 +358,7 @@ export default {
           cameraMode: this.guiParams.values.camType,
           environmentSettings: new OV.EnvironmentSettings(
             ENV_SUFFIXES_ORDER.map((sfx) => {
-              return generateUrl(`apps/files_3dmodelviewer/img/envmaps/${this.guiParams.values.envId}/${sfx}.png`);
+              return generateFilePath(APP_ID, '', `img/envmaps/${this.guiParams.values.envId}/${sfx}.png`);
             }),
             this.guiParams.values.envUseAsBg,
           ),
@@ -490,7 +491,7 @@ export default {
         this.viewerObj?.GetViewer().SetEnvironmentMapSettings(
           new OV.EnvironmentSettings(
             ENV_SUFFIXES_ORDER.map((sfx) => {
-              return generateUrl(`apps/files_3dmodelviewer/img/envmaps/${this.guiParams.values.envId}/${sfx}.png`);
+              return generateFilePath(APP_ID, '', `img/envmaps/${this.guiParams.values.envId}/${sfx}.png`);
             }),
             this.guiParams.values.envUseAsBg,
           ),

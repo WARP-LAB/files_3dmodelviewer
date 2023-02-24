@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-export const STORAGE_KEY = 'files_3dmodelviewer';
+export const APP_ID = 'files_3dmodelviewer';
+export const STORAGE_KEY = APP_ID;
 export const FACTORY_GUI_VALID_ENV = [
   {
     id: 'zbyg_studio003ldr',
