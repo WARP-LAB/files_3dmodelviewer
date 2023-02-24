@@ -24,13 +24,15 @@ Steps to reproduce the behavior:
 
 A clear and concise description of what you expected to happen.
 
-## If the bug is about app not displaying some specific file
+## I have checked that the files are not corrupted
 
-<!-- Have you tried opening it in a desktop app, what is the result there. E.g., "STL is not previewed, bet when I import it in Blender everything is fine". Please elaborate. -->
+<!-- You must have tried opening it in a desktop app. Which and what is the result there? E.g., "When I import the file in question in Blender everything is fine". -->
+
+Yes, using `<name it>`.
 
 ## Screenshots
 
-If applicable, add screenshots to help explain your problem.
+If applicable, add screenshots to help explain your issue.
 
 ## Browser log
 
@@ -70,20 +72,27 @@ Open your console, reload your page and/or do the action leading to this issue a
 
 </details>
 
-## How the app was installed?
+## Installation and configuration
 
+### How the app was installed?
 <!-- Leave one of the following -->
 - Via app store.
 - Manually. Downloading `files_3dmodelviewer.tar.gz` from releases and unzipping the directory.
 - Manually. Cloning and building.
 
-<!-- If manually, please specify value of `apps_path` key if it is set in `config/config.php` -->
+### App server configuration Parameters
+<!--
+Please chnage the statemet below, if `apps_path` key is explicitly set in `config/config.php`. If not set, leave as it is.
+References
+https://docs.nextcloud.com/server/latest/admin_manual/apps_management.html#using-custom-app-directories
+https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#apps
+As well as in which `'path'` from those specified files_3dmodelviewer directory actually resides
+-->
+- `apps_path` parameter is not explicitly configured/customised in `config/config.php`
 
 ## Versions
 
 ### Nextcloud
-
-<!-- please complete the following information if applicable -->
 
 - Version: <!-- e.g. 25.0.4 -->
 - Webserver: <!--  e.g. Apache, nginx -->
