@@ -44,14 +44,14 @@ Currently the only functionality is basic controls (orbit, pan, zoom), few optio
 
 - Visit [releases](https://github.com/WARP-LAB/files_3dmodelviewer/releases)
 - Download latest and unzip
-- Place `files_3dmodelviewer` directory in `<nextcloud-root>/apps`
+- Place `files_3dmodelviewer` directory in `<nextcloud-root>/apps` or [`<your_custom_apps_dir>`](https://docs.nextcloud.com/server/latest/admin_manual/apps_management.html#using-custom-app-directories)
 - Enable
   - through CLI `php occ app:enable files_3dmodelviewer`
   - or WEB GUI.
 
 #### Build
 
-- Clone this repo in `<nextcloud-root>/apps` && `cd <nextcloud-root>/apps/files_3dmodelviewer`
+- Clone this repo in `<nextcloud-root>/apps` or [`<your_custom_apps_dir>`](https://docs.nextcloud.com/server/latest/admin_manual/apps_management.html#using-custom-app-directories) and `cd files_3dmodelviewer`
 - Build
   - See [Building](#building)
 - Enable
