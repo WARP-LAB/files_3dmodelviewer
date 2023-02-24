@@ -1,6 +1,6 @@
 {
   "name": "files_3dmodelviewer",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Visualize and explore 3D models in Nextcloud.",
   "main": "src/js/main.mjs",
   "private": true,
