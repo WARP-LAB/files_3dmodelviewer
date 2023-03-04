@@ -9,7 +9,7 @@ assignees: ''
 
 ## Describe the bug
 
-A clear and concise description of what the bug is.
+<!-- A clear and concise description of what the bug is. -->
 
 ## To Reproduce
 
@@ -22,7 +22,7 @@ Steps to reproduce the behavior:
 
 ## Expected behavior
 
-A clear and concise description of what you expected to happen.
+<!-- A clear and concise description of what you expected to happen. -->
 
 ## I have checked that the files are not corrupted
 
@@ -32,7 +32,7 @@ Yes, using `<name it>`.
 
 ## Screenshots
 
-If applicable, add screenshots to help explain your issue.
+<!-- If applicable, add screenshots to help explain your issue. -->
 
 ## Browser log
 
@@ -114,6 +114,6 @@ As well as in which `'path'` from those specified files_3dmodelviewer directory 
 
 ## Additional context
 
-Add any other context about the issue.
+<!-- Add any other context about the issue. -->
 
 <!-- Sometimes apps clash, it might help if you would issue command `php occ app:list` and paste output here, too -->
