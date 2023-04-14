@@ -98,6 +98,7 @@ As well as in which `'path'` from those specified files_3dmodelviewer directory 
 
 ### Nextcloud
 
+- Installation type: <!--  e.g. manual, Docker, Snap -->
 - Version: <!-- e.g. 25.0.4 -->
 - Webserver: <!--  e.g. Apache, nginx -->
 
