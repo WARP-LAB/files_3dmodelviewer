@@ -92,6 +92,10 @@ As well as in which `'path'` from those specified files_3dmodelviewer directory 
 
 ## Versions
 
+### 3D Model Viewer
+
+- Version: <!-- e.g. 0.0.7 -->
+
 ### Nextcloud
 
 - Version: <!-- e.g. 25.0.4 -->
