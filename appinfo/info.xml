@@ -52,7 +52,7 @@
   <screenshot small-thumbnail="https://raw.githubusercontent.com/warp-lab/files_3dmodelviewer/main/src/img/screenshots/dist/356x200.png">https://raw.githubusercontent.com/warp-lab/files_3dmodelviewer/main/src/img/screenshots/dist/356x200.png</screenshot>
 
     <dependencies>
-        <nextcloud min-version="24" max-version="25"/>
+        <nextcloud min-version="24" max-version="26"/>
     </dependencies>
 
     <repair-steps>
