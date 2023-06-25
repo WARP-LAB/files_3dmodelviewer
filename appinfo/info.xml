@@ -30,7 +30,7 @@
 
 ]]></description>
 
-    <version>0.0.8</version>
+    <version>0.0.10</version>
     <licence>agpl</licence>
     <author homepage="https://www.warp.lv">WARP</author>
     <namespace>Files3dModelViewer</namespace>
