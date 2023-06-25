@@ -46,6 +46,7 @@ export default {
   // props: {},
   // computed: {},
   data () {
+    this.viewerObj = null; // set non-reactive
     return {
       forceRecompute: 0,
       uuid: `uuid-${uuidv4()}`,
@@ -55,7 +56,6 @@ export default {
       domElContainerCanvas: null,
       domElContainerFloatGui: null,
       domElContainerLoading: null,
-      viewerObj: null,
       guiPane: null,
       guiParams: null,
     };
