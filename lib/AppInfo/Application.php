@@ -21,7 +21,7 @@ use OCA\Viewer\Event\LoadViewer;
 class Application extends App implements IBootstrap {
 
 	public static function APP_ID() {
-		$xml = simplexml_load_file(__DIR__ . '/../../appinfo/info.xml');
+		$xml = simplexml_load_string(file_get_contents(realpath(__DIR__ . '/../../appinfo/info.xml')));
 		return ($xml === false) ? null : (string)$xml->id;
 	}
 
