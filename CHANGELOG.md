@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ## [0.0.12]
 
+### Changed
+
+- Added support for up to future Nextcloud 30
+
+## [0.0.12]
+
 ### Fixed
 
 - Workaround for `simplexml_load_file` without much digging
