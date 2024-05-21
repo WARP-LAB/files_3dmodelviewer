@@ -18,6 +18,7 @@ class AddCspEventListener implements IEventListener {
 		}
 		$csp = new EmptyContentSecurityPolicy();
 		$csp->addAllowedFrameDomain('\'self\'');
+		$csp->addAllowedConnectDomain('blob:');
 		$csp->allowEvalScript(true); // DEPR: see NC sources
 		$event->addPolicy($csp);
 	}
