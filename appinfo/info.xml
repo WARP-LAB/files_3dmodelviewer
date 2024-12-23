@@ -30,7 +30,7 @@
 
 ]]></description>
 
-    <version>0.0.14</version>
+    <version>0.0.15</version>
     <licence>agpl</licence>
     <author homepage="https://www.warp.lv">WARP</author>
     <namespace>Files3dModelViewer</namespace>
@@ -52,7 +52,7 @@
   <screenshot small-thumbnail="https://raw.githubusercontent.com/warp-lab/files_3dmodelviewer/main/src/img/screenshots/dist/356x200.png">https://raw.githubusercontent.com/warp-lab/files_3dmodelviewer/main/src/img/screenshots/dist/356x200.png</screenshot>
 
     <dependencies>
-        <nextcloud min-version="24" max-version="30"/>
+        <nextcloud min-version="24" max-version="31"/>
     </dependencies>
 
     <repair-steps>
