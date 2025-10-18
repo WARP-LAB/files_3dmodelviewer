@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.16]
+
+### Added
+
+- Added support for Nextcloud 32
+- Added amf file support
+
+### Changed
+
+- Updated engine online-3d-viewer to latest stable 0.16.0
+- Engine has API changes and how it imports 3rd party libs, implemented that
+
+### Fixed
+
+- Stylelint
+
 ## [0.0.15]
 
 ### Changed
