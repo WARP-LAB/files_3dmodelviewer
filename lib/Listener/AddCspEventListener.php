@@ -16,10 +16,18 @@ class AddCspEventListener implements IEventListener {
 		if (!($event instanceof AddContentSecurityPolicyEvent)) {
 			return;
 		}
+
+		$server_name = isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : '';
+
 		$csp = new EmptyContentSecurityPolicy();
-		$csp->addAllowedFrameDomain('\'self\'');
-		$csp->addAllowedConnectDomain('blob:');
-		$csp->allowEvalScript(true); // DEPR: see NC sources
+		$csp->allowEvalScript(); // DEPR: see NC sources
+		$csp->allowEvalWasm();
+		$csp->addAllowedScriptDomain("'self' ".$server_name);
+		$csp->addAllowedStyleDomain("'self'");
+		$csp->addAllowedFontDomain("'self'");
+		$csp->addAllowedImageDomain("*");
+		$csp->addAllowedConnectDomain("blob:");
+		$csp->addAllowedFrameDomain("'self'");
 		$event->addPolicy($csp);
 	}
 }

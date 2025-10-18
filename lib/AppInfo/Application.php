@@ -36,13 +36,5 @@ class Application extends App implements IBootstrap {
 	}
 
 	public function boot(IBootContext $context): void {
-		// drastic
-		$server_name = isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : '';
-		$cspManager = \OC::$server->getContentSecurityPolicyManager(); // DEPR:
-		$csp = new ContentSecurityPolicy();
-		$csp->addAllowedScriptDomain("'self' ".$server_name);
-		$csp->addAllowedImageDomain('*');
-		$csp->addAllowedFontDomain("'self'");
-		$cspManager->addDefaultPolicy($csp); // DEPR:
 	}
 }
