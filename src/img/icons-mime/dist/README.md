@@ -5,6 +5,7 @@
 - 3dm
 - 3ds
 - 3mf
+- amf
 - dae
 - fbx
 - glb

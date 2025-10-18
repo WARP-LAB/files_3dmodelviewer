@@ -16,6 +16,7 @@ if (OCA.Viewer) {
       'model/3dm-nospec',
       'model/3ds-nospec',
       'model/3mf',
+      'model/amf',
       'model/bim-nospec',
       'model/brep-nospec',
       'model/vnd.collada+xml',

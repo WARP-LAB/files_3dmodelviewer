@@ -19,6 +19,7 @@ abstract class MimeTypeBase implements IRepairStep
 		'3dm' => ['model/3dm-nospec'],
 		'3ds' => ['model/3ds-nospec'],
 		'3mf' => ['model/3mf'],
+		'amf' => ['model/amf'],
 		'bim' => ['model/bim-nospec'],
 		'brp' => ['model/brep-nospec'],
 		'brep' => ['model/brep-nospec'],

@@ -14,6 +14,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 | 3dm | Rhino | |
 | 3ds | Autodesk 3D Studio | |
 | 3mf | 3D Manufacturing Format | |
+| amf | Additive Manufacturing File Format | |
 | bim | dotbim | |
 | brep/brp | Boundary Representation | |
 | dae | Collada | |
