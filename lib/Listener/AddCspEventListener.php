@@ -19,14 +19,15 @@ class AddCspEventListener implements IEventListener {
 
 		$server_name = isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : '';
 
+		// https://github.com/kovacsv/Online3DViewer/blob/master/source/engine/import/importerutils.js now uses CDN
 		$csp = new EmptyContentSecurityPolicy();
 		$csp->allowEvalScript(); // DEPR: see NC sources
 		$csp->allowEvalWasm();
-		$csp->addAllowedScriptDomain("'self' ".$server_name);
+		$csp->addAllowedScriptDomain("'self' https://cdn.jsdelivr.net ".$server_name);
 		$csp->addAllowedStyleDomain("'self'");
 		$csp->addAllowedFontDomain("'self'");
 		$csp->addAllowedImageDomain("*");
-		$csp->addAllowedConnectDomain("blob:");
+		$csp->addAllowedConnectDomain("blob: https://cdn.jsdelivr.net");
 		$csp->addAllowedFrameDomain("'self'");
 		$event->addPolicy($csp);
 	}

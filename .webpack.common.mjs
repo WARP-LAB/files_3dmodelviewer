@@ -270,12 +270,6 @@ config.plugins.push(new StylelintPlugin({
 config.plugins.push(new CopyPlugin({
   patterns: [
     {
-      from: pathResolve(cjsDirname, 'node_modules/online-3d-viewer/libs'),
-      to: pathResolve(cjsDirname, 'js/libs/'),
-      toType: 'dir',
-      force: true,
-    },
-    {
       from: pathResolve(cjsDirname, 'src/img/envmaps/dist'),
       to: pathResolve(cjsDirname, 'img/envmaps/'),
       toType: 'dir',

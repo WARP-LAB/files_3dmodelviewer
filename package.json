@@ -54,7 +54,7 @@
     "markdownlint": "^0.26.2",
     "normalize.css": "^8.0.1",
     "npm-check-updates": "^16.7.4",
-    "online-3d-viewer": "^0.8.21",
+    "online-3d-viewer": "^0.16.0",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
     "postcss-scss": "^4.0.6",

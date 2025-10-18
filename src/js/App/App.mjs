@@ -347,8 +347,6 @@ export default {
 
       this.paramsLoad();
 
-      // assuming that installed under apps/, not some custom path enabled by "apps_paths" key in config.php
-      OV.SetExternalLibLocation(generateFilePath(APP_ID, '', 'js/libs'));
       // https://kovacsv.github.io/Online3DViewer/Function_Init3DViewerFromFileList.html
       // retuns EmbeddedViewer
       this.viewerObj = OV.Init3DViewerFromFileList(
@@ -387,8 +385,8 @@ export default {
 
       // apply settings to object, that are not available in constructor
       this.viewerObj?.GetViewer().SetUpVector(this.guiParams.values.viewUp);
-      this.viewerObj?.GetViewer().SetCameraMode(this.guiParams.values.camType);
-      this.viewerObj?.GetViewer().SetFixUpVector(this.guiParams.values.camOrb === 1);
+      this.viewerObj?.GetViewer().SetProjectionMode(this.guiParams.values.camType);
+      this.viewerObj?.GetViewer().SetNavigationMode(this.guiParams.values.camOrb);
       this.viewerObj?.GetViewer().FitSphereToWindow(
         this.viewerObj?.GetViewer().GetBoundingSphere((meshUserData) => true),
         true,
@@ -464,7 +462,7 @@ export default {
         .on('change', (ev) => {
           if (!ev.last) return;
           this.guiParams.values.camType = ev.value;
-          this.viewerObj?.GetViewer().SetCameraMode(this.guiParams.values.camType);
+          this.viewerObj?.GetViewer().SetProjectionMode(this.guiParams.values.camType);
           this.paramsSave();
         });
       f2.addBlade({
@@ -479,7 +477,7 @@ export default {
         .on('change', (ev) => {
           if (!ev.last) return;
           this.guiParams.values.camOrb = ev.value;
-          this.viewerObj?.GetViewer().SetFixUpVector(this.guiParams.values.camOrb === 1);
+          this.viewerObj?.GetViewer().SetNavigationMode(this.guiParams.values.camOrb);
           this.paramsSave();
         });
 
