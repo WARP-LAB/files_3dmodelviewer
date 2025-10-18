@@ -4,14 +4,14 @@
  */
 
 @mixin devBorderRandom {
-  @if ($env == "development") {
+  @if ($env == 'development') {
+    /* stylelint-disable-next-line scss/no-global-function-names */
     border: 1px solid rgb(random(255), random(255), random(255));
   }
 }
 
 .containApp {
   @include devBorderRandom;
-
   position: absolute;
   top: 0;
   left: 0;
@@ -24,7 +24,6 @@
 
 .containCanvas {
   @include devBorderRandom;
-
   top: 0;
   left: 0;
   width: 100%;
@@ -45,14 +44,14 @@
 
     &> div {
       //  background-color: green;
-        width: 64px;
-        height: 64px;
-        align-self: center;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        animation: spinner 5.0s linear infinite;
-        padding-bottom: 1rem;
+      width: 64px;
+      height: 64px;
+      align-self: center;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: spinner 5.0s linear infinite;
+      padding-bottom: 1rem;
     }
   }
 
@@ -60,12 +59,10 @@
 
 .containFloatGui {
   @include devBorderRandom;
-
   position:absolute;
   top: 1rem;
   right: 44px; // Nextcloud viewer has left/light arrows for media group
   z-index: 2;
-
 }
 
 @keyframes spinner {
