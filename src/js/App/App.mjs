@@ -109,6 +109,59 @@ export default {
     logger.error('errorCaptured', error?.name, error?.message, error);
   },
   methods: {
+    getInitialStateValue (app, key) {
+      const input = document.getElementById(`initial-state-${app}-${key}`);
+      if (!input?.value) {
+        return null;
+      }
+      try {
+        return JSON.parse(window.atob(input.value));
+      }
+      catch (error) {
+        logger.error('error decoding initial state', app, key, error?.name, error);
+        return null;
+      }
+    },
+    getPublicShareDownloadUrl () {
+      if (this.getInitialStateValue('files_sharing', 'isPublic') !== true) {
+        return null;
+      }
+      if (this.getInitialStateValue('files_sharing', 'view') !== 'public-file-share') {
+        return null;
+      }
+
+      const currentPathname = window.location.pathname;
+      const sharePathMatch = currentPathname.match(/^(.*\/s\/[^/]+)(?:\/.*)?$/);
+      if (!sharePathMatch?.[1]) {
+        return null;
+      }
+
+      const sharePath = sharePathMatch[1].replace(/\/+$/, '');
+      return `${window.location.origin}${sharePath}/download`;
+    },
+    getEffectiveBasename () {
+      const publicShareFilename = this.getInitialStateValue('files_sharing', 'filename');
+      if (typeof publicShareFilename === 'string' && publicShareFilename.length > 0) {
+        return publicShareFilename;
+      }
+      if (typeof this.basename === 'string' && this.basename.length > 0) {
+        return this.basename;
+      }
+
+      const fallbacks = [this.filename, this.path, this.source, this.davPath];
+      for (const fallback of fallbacks) {
+        if (typeof fallback !== 'string' || fallback.length === 0) {
+          continue;
+        }
+        const cleanFallback = fallback.split('?')[0].replace(/\/+$/, '');
+        const basename = cleanFallback.split('/').pop();
+        if (basename) {
+          return decodeURIComponent(basename);
+        }
+      }
+
+      return 'model';
+    },
     handleWindowResize () {
       // NOTE: issue is that on window resize sidebar changes size
       // TODO: debounce
@@ -210,13 +263,15 @@ export default {
       this.domElContainerLoading.appendChild(domElSpinner);
       this.domElContainerCanvas.appendChild(this.domElContainerLoading);
 
-      const modelFetchUrl = this.source || this.davPath;
-      const modelBasenameFs = this.basename;
+      let modelFetchUrl = this.source || this.davPath;
+      const publicShareDownloadUrl = this.getPublicShareDownloadUrl();
+      const modelBasenameFs = this.getEffectiveBasename();
       const modelBasenameEnc = encodeURIComponent(modelBasenameFs);
-      const modelExt = this.basename.split('.').pop();
+      const modelExt = modelBasenameFs.split('.').pop();
       const modelMime = this.mime;
 
       logger.debug('modelFetchUrl', modelFetchUrl);
+      logger.debug('publicShareDownloadUrl', publicShareDownloadUrl);
       logger.debug('modelBasenameFs', modelBasenameFs);
       logger.debug('modelBasenameEnc', modelBasenameEnc);
       logger.debug('modelExt', modelExt);
@@ -225,8 +280,25 @@ export default {
       let fileModel;
       let filesToPass = [];
 
+      const modelFetchUrls = [...new Set([
+        publicShareDownloadUrl,
+        modelFetchUrl,
+      ].filter(Boolean))];
+
       try {
-        fileModel = await fetchFileFromUrl(modelFetchUrl, modelBasenameFs, modelMime);
+        for (const candidateUrl of modelFetchUrls) {
+          try {
+            fileModel = await fetchFileFromUrl(candidateUrl, modelBasenameFs, modelMime);
+            modelFetchUrl = candidateUrl;
+            break;
+          }
+          catch (error) {
+            logger.error('error fetching object candidate', candidateUrl, error?.name, error);
+          }
+        }
+        if (!fileModel) {
+          throw new Error('No usable model URL found.');
+        }
       }
       catch (error) {
         logger.error('error fetching object', error?.name, error);

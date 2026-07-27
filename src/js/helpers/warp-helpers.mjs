@@ -39,6 +39,10 @@ export async function fetchFileFromUrl (url, name, defaultType = 'text/plain') {
     // for this project just throw
     throw new Error(`${response?.url} ${response?.status} ${response?.statusText}`);
   }
+  const contentType = response.headers.get('content-type') || '';
+  if (/^\s*text\/html\b/i.test(contentType)) {
+    throw new Error(`${response?.url} returned HTML instead of file content`);
+  }
   const data = await response.blob();
   return new File([data], name, {
     type: data.type || defaultType,
