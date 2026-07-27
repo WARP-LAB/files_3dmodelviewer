@@ -17,9 +17,9 @@ class LoadPublicViewerListener implements IEventListener {
 		if (!$event instanceof BeforeTemplateRenderedEvent) {
 			return;
 		}
-		if ($event->getResponse()->getRenderAs() !== TemplateResponse::RENDER_AS_PUBLIC) {
-			return;
-		}
+		// if ($event->getResponse()->getRenderAs() !== TemplateResponse::RENDER_AS_PUBLIC) {
+		// 	return;
+		// }
 		Util::addScript(Application::APP_ID(), 'files_3dmodelviewer');
 	}
 }
