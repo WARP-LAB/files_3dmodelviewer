@@ -39,7 +39,9 @@ if (OCA.Viewer) {
       component: App,
     });
   } catch (error) {
-    if (error?.message?.includes('already registered') || error?.message?.includes('duplicate') || error?.message?.includes('same name')) {} else {
+    if (error?.message?.includes('already registered') || error?.message?.includes('duplicate') || error?.message?.includes('same name')) {
+      // eslint-ignore-line
+    } else {
       console.error('error in registerHandler:', error);
     }
   }
