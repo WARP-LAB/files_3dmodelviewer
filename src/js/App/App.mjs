@@ -39,6 +39,10 @@ import * as OV from 'online-3d-viewer';
 import {Pane} from 'tweakpane';
 import logger from 'logger/logger.mjs'; // eslint-disable-line import/no-unresolved, n/no-missing-import
 
+// online-3d-viewer CDN URLs are rewritten at build time to this base, libs are shipped in js/libs/ (see .webpack.common.mjs)
+// must be absolute, occt worker is created from a blob: URL
+window.__O3DV_LIB_BASE__ = window.location.origin + generateFilePath(APP_ID, '', 'js/libs/');
+
 // ----------------
 
 export default {

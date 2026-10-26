@@ -13,6 +13,9 @@ import {
 import {
   fileURLToPath as urlFileURLToPath,
 } from 'url';
+import {
+  readFileSync as fsReadFileSync,
+} from 'fs';
 
 import webpack from 'webpack';
 import TerserPlugin from 'terser-webpack-plugin';
@@ -88,9 +91,71 @@ const config = {
 };
 
 // ----------------
+// Online3DViewer external libs
+// online-3d-viewer hardcodes https://cdn.jsdelivr.net/npm/<pkg>@<ver>/<file> for its optional importers
+// (see source/engine/import/importerutils.js). Rewrite the prefix to window.__O3DV_LIB_BASE__
+// (set in App.mjs to js/libs/) and ship the same <pkg>@<ver>/<file> layout from node_modules.
+// Fail the build if the bundle references a lib or version that is not installed here.
+const o3dvModulePath = pathResolve(cjsDirname, 'node_modules/online-3d-viewer/build/engine/o3dv.module.js');
+const o3dvCdnPrefixRegex = /(['"])https:\/\/cdn\.jsdelivr\.net\/npm\//g;
+const o3dvLibFiles = {
+  'occt-import-js': [
+    {from: 'dist/occt-import-js-worker.js', to: 'dist/'},
+    {from: 'dist/occt-import-js.js', to: 'dist/'},
+    {from: 'dist/occt-import-js.wasm', to: 'dist/'},
+    {from: 'dist/license.*.txt', to: 'dist/'},
+  ],
+  rhino3dm: [
+    {from: 'rhino3dm.min.js'},
+    {from: 'rhino3dm.wasm'},
+  ],
+  'web-ifc': [
+    {from: 'web-ifc-api-iife.js'},
+    {from: 'web-ifc.wasm'},
+    {from: 'web-ifc-mt.wasm'},
+    {from: 'web-ifc-mt.worker.js'},
+  ],
+  draco3d: [
+    // jsDelivr serves an auto-minified .min.js, npm package ships only the plain file
+    {from: 'draco_decoder_nodejs.js', toFile: 'draco_decoder_nodejs.min.js'},
+    {from: 'draco_decoder.wasm'},
+  ],
+};
+const o3dvCdnRefs = [...fsReadFileSync(o3dvModulePath, 'utf8')
+  .matchAll(/https:\/\/cdn\.jsdelivr\.net\/npm\/((?:@[^/@]+\/)?[^/@]+)@([^/'"]+)\//g)]
+  .map(([, name, version]) => ({name, version}));
+if (o3dvCdnRefs.length === 0) {
+  throw new Error('online-3d-viewer: no CDN references found, check whether the rewrite is still needed');
+}
+const o3dvLibCopyPatterns = o3dvCdnRefs.flatMap(({name, version}) => {
+  if (!o3dvLibFiles[name]) {
+    throw new Error(`online-3d-viewer: references unknown CDN lib ${name}@${version}, add it to o3dvLibFiles`);
+  }
+  const installedVersion = JSON.parse(fsReadFileSync(pathResolve(cjsDirname, `node_modules/${name}/package.json`), 'utf8')).version;
+  if (installedVersion !== version) {
+    throw new Error(`online-3d-viewer: expects ${name}@${version} but ${installedVersion} is installed, run npm i -D -E ${name}@${version}`);
+  }
+  return o3dvLibFiles[name].map(({from, to = '', toFile}) => ({
+    from: pathJoin('node_modules', name, from),
+    to: pathResolve(cjsDirname, `js/libs/${name}@${version}/${to}${toFile ?? '[name][ext]'}`),
+    toType: 'template',
+    force: true,
+  }));
+});
+
+// ----------------
 // MODULE RULES
 config.module = {
   rules: [
+    {
+      test: o3dvModulePath,
+      loader: 'string-replace-loader',
+      options: {
+        search: o3dvCdnPrefixRegex,
+        replace: 'window.__O3DV_LIB_BASE__ + $1',
+        strict: true,
+      },
+    },
     {
       test: /\.(js|mjs|cjs|ts)x?$/,
       exclude: [/node_modules/, /bower_components/],
@@ -187,6 +252,7 @@ config.optimization = {
   minimizer: [
     new TerserPlugin({
       test: /\.m?js(\?.*)?$/i,
+      exclude: /^libs\//, // shipped prebuilt as-is, occt worker is string-patched at runtime
       parallel: true,
       extractComments: false,
       terserOptions: {
@@ -287,6 +353,7 @@ config.plugins.push(new CopyPlugin({
       toType: 'dir',
       force: true,
     },
+    ...o3dvLibCopyPatterns,
   ],
   options: {
     concurrency: 100,
