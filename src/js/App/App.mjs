@@ -126,7 +126,9 @@ export default {
       if (this.getInitialStateValue('files_sharing', 'isPublic') !== true) {
         return null;
       }
-      if (this.getInitialStateValue('files_sharing', 'view') !== 'public-file-share') {
+
+      const view = this.getInitialStateValue('files_sharing', 'view');
+      if (!['public-file-share', 'public share'].includes(view)) {
         return null;
       }
 
@@ -137,13 +139,40 @@ export default {
       }
 
       const sharePath = sharePathMatch[1].replace(/\/+$/, '');
-      return `${window.location.origin}${sharePath}/download`;
+
+      // Direct public file share
+      if (view === 'public-file-share') {
+        return `${window.location.origin}${sharePath}/download`;
+      }
+
+      // File opened from a public folder share
+      const filePath = typeof this.path === 'string'
+        ? this.path.split('?')[0]
+        : '';
+      const basename = this.getEffectiveBasename();
+      const slash = filePath.lastIndexOf('/');
+      const dir = slash >= 0
+        ? (filePath.slice(0, slash) || '/')
+        : '/';
+
+      return `${window.location.origin}${sharePath}/download`
+        + `?path=${encodeURIComponent(dir)}`
+        + `&files=${encodeURIComponent(basename)}`;
     },
     getEffectiveBasename () {
       const publicShareFilename = this.getInitialStateValue('files_sharing', 'filename');
-      if (typeof publicShareFilename === 'string' && publicShareFilename.length > 0) {
+      const view = this.getInitialStateValue('files_sharing', 'view');
+
+      // In a public folder share, files_sharing/filename contains the
+      // shared folder name, not the currently opened file name.
+      if (
+        view === 'public-file-share'
+        && typeof publicShareFilename === 'string'
+        && publicShareFilename.length > 0
+      ) {
         return publicShareFilename;
       }
+
       if (typeof this.basename === 'string' && this.basename.length > 0) {
         return this.basename;
       }
